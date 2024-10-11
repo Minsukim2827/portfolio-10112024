@@ -13,10 +13,10 @@ function App() {
     <div className="App">
       <Navbar />
       <main>
-<Intro />
-<Education />
-<Skills />
-<Projects />
+      <section id="intro"><Intro /></section>
+        <section id="education"><Education /></section>
+        <section id="skills"><Skills /></section>
+        <section id="projects"><Projects /></section>
       </main>
       <Footer />
     </div>
