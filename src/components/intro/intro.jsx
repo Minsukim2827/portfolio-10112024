@@ -48,9 +48,9 @@ export default function Intro() {
 
       {/* Modal for Resume */}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div className="h-[80vh]">
+        <div className="h-[90vh]">
           <iframe
-            src="./resume.pdf"
+            src="/resume.pdf"
             title="Resume"
             className="w-full h-full"
           ></iframe>

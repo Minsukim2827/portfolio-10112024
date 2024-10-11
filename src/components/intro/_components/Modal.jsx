@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       onClick={handleOverlayClick} 
     >
       <div
-        className=" rounded-lg overflow-hidden shadow-lg max-w-3xl w-full relative"
+        className="bg-black rounded-lg overflow-hidden shadow-lg max-w-3xl w-full sm:w-11/12 md:w-3/4 lg:w-1/2 relative"
         onClick={handleContentClick}
       >
         <button
