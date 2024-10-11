@@ -65,11 +65,11 @@ const Navbar = () => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-foreground">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-white" />
                   <span className="sr-only">Open main menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[250px] sm:w-[300px] h-[30vh]">
+              <SheetContent side="right" className="w-[250px] sm:w-[300px] h-[30vh] bg-black/30 backdrop-blur text-white">
                 <DialogTitle className="sr-only">Navigation Menu</DialogTitle>
                 <DialogDescription id="nav-menu-description" className="sr-only">
                   Navigation menu for quick access to different sections of the portfolio
@@ -79,10 +79,10 @@ const Navbar = () => {
                     <AnimatedButton
                       key={link.name}
                       onClick={() => handleNavClick(link.id)}
-                      className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                      className="text-white hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
                       ariaDescribedBy={`mobile-${link.id}-description`}
                     >
-                      <span className="mr-2">{link.icon}</span>
+                      <span className="mr-2 text-red-500">{link.icon}</span>
                       {link.name}
                       <span id={`mobile-${link.id}-description`} className="sr-only">
                         {link.description}
