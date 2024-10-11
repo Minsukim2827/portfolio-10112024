@@ -33,7 +33,7 @@ export default function Projects() {
             </CardContent>
             <CardFooter className="flex justify-between">
               {project.github && (
-                <Button variant="outline" asChild>
+                <Button variant="outline" asChild className="bg-black">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4 text-white " />
                     <span className="text-white">GitHub</span>
@@ -41,7 +41,7 @@ export default function Projects() {
                 </Button>
               )}
               {project.website && (
-                <Button variant="outline" asChild>
+                <Button variant="outline" asChild className="bg-black">
                   <a href={project.website} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4 text-white" />
                     <span className="text-white">Visit Site</span>

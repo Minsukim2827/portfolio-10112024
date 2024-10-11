@@ -1,47 +1,66 @@
-import { useState } from "react"
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { navLinks } from "./_components/navLinks"
-import useNavbarHeight from "@/hooks/useNavbarHeight"
-import useSmoothScroll from "@/hooks/useSmoothScroll"
-import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog"
-import { createHandleNavClick } from "./_components/navbarUtils"
+
+import { useState } from "react";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { navLinks } from "./_components/navLinks";
+import useNavbarHeight from "@/hooks/useNavbarHeight";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
+import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
+import { createHandleNavClick } from "./_components/navbarUtils";
+import AnimatedButton from "./_components/AnimatedButton"; 
+import useIsScrolled from "@/hooks/useIsScrolled"; 
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const { scrollToSection } = useSmoothScroll()
+  const [isOpen, setIsOpen] = useState(false);
+  const isScrolled = useIsScrolled(50); 
+  const { scrollToSection } = useSmoothScroll();
 
-  useNavbarHeight()
+  useNavbarHeight();
 
-  const handleNavClick = createHandleNavClick(scrollToSection, setIsOpen)
+  const handleNavClick = createHandleNavClick(scrollToSection, setIsOpen);
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-border">
+    <nav
+      className={`sticky top-0 z-40 w-full border-b border-border transition-colors duration-300 ${
+        isScrolled ? "bg-black/30 backdrop-blur" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
+          {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
-            <button 
+            <AnimatedButton
               onClick={() => handleNavClick("intro")}
               className="text-2xl font-bold text-red-500"
+              ariaDescribedBy="logo-description"
             >
               Minsu
-            </button>
+              <span id="logo-description" className="sr-only">
+                Navigate to the introduction section
+              </span>
+            </AnimatedButton>
           </div>
+
+          {/* Desktop Navigation Links */}
           <div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-center">
             {navLinks.map((link) => (
-              <button
+              <AnimatedButton
                 key={link.name}
                 onClick={() => handleNavClick(link.id)}
-                className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center"
-                aria-describedby={`${link.id}-description`}
+                className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                ariaDescribedBy={`${link.id}-description`}
               >
-                <span className="mr-2 text-white">{link.icon}</span>
+                <span className="mr-2 text-red-500">{link.icon}</span>
                 <span className="text-white">{link.name}</span>
-                <span id={`${link.id}-description`} className="sr-only">{link.description}</span>
-              </button>
+                <span id={`${link.id}-description`} className="sr-only">
+                  {link.description}
+                </span>
+              </AnimatedButton>
             ))}
           </div>
+
+          {/* Mobile Menu */}
           <div className="sm:hidden flex items-center">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -57,16 +76,18 @@ const Navbar = () => {
                 </DialogDescription>
                 <nav className="flex flex-col space-y-4 mt-4" aria-describedby="nav-menu-description">
                   {navLinks.map((link) => (
-                    <button
+                    <AnimatedButton
                       key={link.name}
                       onClick={() => handleNavClick(link.id)}
-                      className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center"
-                      aria-describedby={`mobile-${link.id}-description`}
+                      className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                      ariaDescribedBy={`mobile-${link.id}-description`}
                     >
                       <span className="mr-2">{link.icon}</span>
                       {link.name}
-                      <span id={`mobile-${link.id}-description`} className="sr-only">{link.description}</span>
-                    </button>
+                      <span id={`mobile-${link.id}-description`} className="sr-only">
+                        {link.description}
+                      </span>
+                    </AnimatedButton>
                   ))}
                 </nav>
               </SheetContent>
@@ -76,6 +97,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
