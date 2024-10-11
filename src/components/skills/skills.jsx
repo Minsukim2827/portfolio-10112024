@@ -2,7 +2,7 @@
 const Skills = () => {
     return (
         <div>
-            <h2 className="text-white">Skills</h2>
+            <h2 className="text-white min-h-[90vh]">Skills</h2>
 
         </div>
     );

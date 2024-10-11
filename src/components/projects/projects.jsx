@@ -4,10 +4,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { projects } from './_components/projects'
-
+import FadeInWrapper from "@/components/FadeInWrapper";
 
 export default function Projects() {
   return (
+    <FadeInWrapper>
     (<div className="min-h-screen text-foreground p-8">
       <h1 className="text-4xl font-bold mb-8 text-center text-white">My Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -24,7 +25,7 @@ export default function Projects() {
                 className="w-full h-48 object-cover rounded-md mb-4" />
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, techIndex) => (
-                  <Badge key={techIndex} variant="secondary" className="text-white bg-black">
+                  <Badge key={techIndex} variant="default" className="text-white bg-black">
                     {getTechIcon(tech)}
                     <span className="ml-1">{tech}</span>
                   </Badge>
@@ -33,7 +34,7 @@ export default function Projects() {
             </CardContent>
             <CardFooter className="flex justify-between">
               {project.github && (
-                <Button variant="outline" asChild className="bg-black">
+                <Button variant="outline" asChild className="bg-black hover:bg-zinc-900">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4 text-white " />
                     <span className="text-white">GitHub</span>
@@ -41,7 +42,7 @@ export default function Projects() {
                 </Button>
               )}
               {project.website && (
-                <Button variant="outline" asChild className="bg-black">
+                <Button variant="outline" asChild className="bg-black hover:bg-zinc-900">
                   <a href={project.website} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4 text-white" />
                     <span className="text-white">Visit Site</span>
@@ -53,6 +54,7 @@ export default function Projects() {
         ))}
       </div>
     </div>)
+    </FadeInWrapper>
   );
 }
 

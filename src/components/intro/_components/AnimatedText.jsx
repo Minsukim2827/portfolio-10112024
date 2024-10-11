@@ -1,9 +1,8 @@
-// ./_components/AnimatedText.jsx
+
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import './AnimatedText.css'; // Import the CSS for blinking cursor
+import './AnimatedText.css'; 
 
-// Define the words array outside the component to maintain a stable reference
 const words = ["Software Developer", "Software Engineer"];
 
 const AnimatedText = () => {
@@ -23,18 +22,15 @@ const AnimatedText = () => {
         : fullText.substring(0, prev.length + 1)
       );
 
-      // Adjust speed and state transitions
+
       if (!isDeleting && text === fullText) {
-        // Finished typing, initiate pause before deleting
         setIsDeleting(true);
         setSpeed(2000); // Hold for 3 seconds
       } else if (isDeleting && text === '') {
-        // Finished deleting, move to the next word
         setIsDeleting(false);
         setWordIndex(prev => prev + 1);
         setSpeed(300); // Hold for 0.5 seconds before typing next word
       } else {
-        // Continue typing or deleting
         setSpeed(isDeleting ? 60 : 50); // Adjust typing/backspacing speed
       }
     };

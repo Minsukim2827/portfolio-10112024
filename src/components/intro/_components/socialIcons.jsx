@@ -12,7 +12,7 @@ const SocialIcon = ({ href, Icon, label, size = 'md' }) => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="text-red-500 border border-red-500 rounded-full p-3 transition-colors hover:bg-red-600"
+    className="text-red-500 border border-red-500 rounded-full p-3 transition-colors hover:bg-red-900"
   >
     <Icon className={`${sizeClasses[size]} text-white`} />
   </a>

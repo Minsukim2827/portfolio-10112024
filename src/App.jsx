@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 function App() {
   return (
     <Router>
-    <div className="App bg-black max-w-[1280px] m-auto">
+    <div className="App bg-neutral-950 max-w-[1280px] m-auto">
       <Navbar />
       <main>
       <section id="intro"><Intro /></section>

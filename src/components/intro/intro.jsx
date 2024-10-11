@@ -7,7 +7,7 @@ import AnimatedText from './_components/AnimatedText'; // Import the AnimatedTex
 export default function Intro() {
   return (
     <div
-      className="min-h-[calc(95vh-var(--navbar-height))] text-foreground flex flex-col md:flex-row items-center justify-center p-4 md:p-6 border border-black gap-6 md:gap-8"
+      className="min-h-[calc(95vh-var(--navbar-height))] text-foreground flex flex-col md:flex-row items-center justify-center p-4 md:p-6 gap-6 md:gap-8"
     >
       {/* Text Content */}
       <div className="md:w-1/2 space-y-5 text-center md:text-left mb-3 md:mb-0">
@@ -27,7 +27,7 @@ export default function Intro() {
         {/* Resume Link */}
         <Link
           to="./resume.pdf"
-          className="inline-block bg-red-500 text-primary-foreground px-8 py-4 rounded-md hover:bg-red-700 transition-colors text-xl"
+          className="inline-block bg-red-800 text-primary-foreground px-8 py-4 rounded-md hover:bg-red-900 transition-colors text-xl"
         >
           View Resume
         </Link>
