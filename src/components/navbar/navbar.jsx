@@ -33,9 +33,10 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.id)}
-                className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center"
                 aria-describedby={`${link.id}-description`}
               >
+                <span className="mr-2">{link.icon}</span>
                 {link.name}
                 <span id={`${link.id}-description`} className="sr-only">{link.description}</span>
               </button>
@@ -59,9 +60,10 @@ const Navbar = () => {
                     <button
                       key={link.name}
                       onClick={() => handleNavClick(link.id)}
-                      className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                      className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center"
                       aria-describedby={`mobile-${link.id}-description`}
                     >
+                      <span className="mr-2">{link.icon}</span>
                       {link.name}
                       <span id={`mobile-${link.id}-description`} className="sr-only">{link.description}</span>
                     </button>
