@@ -82,3 +82,17 @@
   }
 }
 
+
+.badge-secondary {
+  @apply bg-red-200 text-gray-800;
+}
+
+/* Button Variants */
+.btn-outline-red {
+  @apply border-red-500 text-red-500 hover:bg-red-500 hover:text-white;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  @apply shadow-md hover:shadow-xl transition-shadow duration-300;
+}

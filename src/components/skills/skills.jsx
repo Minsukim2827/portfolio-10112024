@@ -1,4 +1,4 @@
-import React from "react"
+
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -11,12 +11,14 @@ import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
 import { skills } from "./_components/skills"
 import { skillIcons } from "./_components/skillIcons"
+import FadeInWrapper from "@/components/FadeInWrapper";
 
 
 function SkillCarousel({ title, items }) {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
   
     return (
+        <FadeInWrapper>
       <div className="w-full mb-8">
         <h3 className="text-xl font-semibold mb-4">{title}</h3>
         <Carousel
@@ -44,7 +46,7 @@ function SkillCarousel({ title, items }) {
   width={48}
   height={48}
   alt={skill}
-  className="mb-2 transform transition-transform duration-200 hover:scale-110"
+  className="mb-2 red-filter transform transition-transform hover:scale-110"
 />
 
                     <span className="text-xs sm:text-sm font-medium text-center text-white">{skill}</span>
@@ -57,13 +59,14 @@ function SkillCarousel({ title, items }) {
           <CarouselNext className="bg-neutral-950 text-red-500 border-red-500"/>
         </Carousel>
       </div>
+      </FadeInWrapper>
     )
   }
   
 
   export default function Skills() {
     return (
-      <section className="py-12">
+      <section className="py-12 md:py-28">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl text-white font-bold text-center mb-8">My Skills</h2>
           <div className="space-y-8">

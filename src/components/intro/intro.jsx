@@ -27,7 +27,7 @@ export default function Intro() {
         {/* Resume Link */}
         <Link
           to="./resume.pdf"
-          className="inline-block bg-red-800 text-primary-foreground px-8 py-4 rounded-md hover:bg-red-900 transition-colors text-xl"
+          className="resume-button bg-zinc-900 inline-block text-primary-foreground px-8 py-4 rounded-md transition-colors text-xl"
         >
           View Resume
         </Link>
@@ -37,7 +37,7 @@ export default function Intro() {
         <img
           src="./avatar.png"
           alt="Minsu"
-          className="rounded-full w-96 h-96 object-cover border-4 border-primary"
+          className="rounded-full w-96 h-96 object-cover avatar-image"
         />
       </div>
     </div>
