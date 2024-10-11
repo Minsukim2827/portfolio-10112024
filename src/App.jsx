@@ -1,24 +1,26 @@
 import './App.css'
-import { Routes, Route } from "react-router-dom";
 import Navbar from './components/navbar/navbar';
 import Intro from './components/intro/intro';
 import Skills from './components/skills/skills';
 import Education from './components/education/education';
 import Footer from './components/footer/footer';
+import Projects from './components/projects/projects';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
+    <Router>
     <div className="App">
       <Navbar />
       <main>
-        <Routes>
-          <Route path="/" element={<Intro />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/skills" element={<Skills />} />
-        </Routes>
+<Intro />
+<Education />
+<Skills />
+<Projects />
       </main>
       <Footer />
     </div>
+    </Router>
   )
 }
 
