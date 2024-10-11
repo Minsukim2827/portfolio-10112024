@@ -17,13 +17,13 @@ const Navbar = () => {
   const handleNavClick = createHandleNavClick(scrollToSection, setIsOpen)
 
   return (
-    <nav className="bg-background sticky top-0 z-40 w-full border-b border-border">
+    <nav className="sticky top-0 z-40 w-full border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <button 
               onClick={() => handleNavClick("intro")}
-              className="text-2xl font-bold text-black"
+              className="text-2xl font-bold text-red-500"
             >
               Minsu
             </button>
@@ -36,8 +36,8 @@ const Navbar = () => {
                 className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center"
                 aria-describedby={`${link.id}-description`}
               >
-                <span className="mr-2">{link.icon}</span>
-                {link.name}
+                <span className="mr-2 text-white">{link.icon}</span>
+                <span className="text-white">{link.name}</span>
                 <span id={`${link.id}-description`} className="sr-only">{link.description}</span>
               </button>
             ))}

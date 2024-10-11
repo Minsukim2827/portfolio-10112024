@@ -2,8 +2,8 @@
 
 const Footer = () => {
     return (
-        <footer className="footer">
-            <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <footer className="footer text-white">
+            <p>&copy; {new Date().getFullYear()} Minsu Kim</p>
         </footer>
     );
 };
