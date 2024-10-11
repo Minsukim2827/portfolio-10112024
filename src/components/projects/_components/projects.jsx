@@ -5,7 +5,7 @@ export const projects = [
       technologies: ["ReactJS", "TailwindCSS", "Python", "Flask", "OpenAI API", "Heroku PostgreSQL"],
       github: "https://github.com/Minsukim2827/Interactive-AI-Storytelling-Platform",
       website: null,
-      image: "/placeholder.svg?height=200&width=400"
+      image: "./ai.gif?height=200&width=400"
     },
     {
       title: "PagePulse",
@@ -13,7 +13,7 @@ export const projects = [
       technologies: ["TypeScript", "TailwindCSS", "NextJS", "PostgreSQL", "Google Books API"],
       github: "https://github.com/Minsukim2827/pagepulse",
       website: "https://pagepulse.netlify.app/",
-      image: "/placeholder.svg?height=200&width=400"
+      image: "./pagepulse.gif?height=200&width=400"
     },
     {
       title: "LinguaAI",
@@ -21,6 +21,6 @@ export const projects = [
       technologies: ["OpenAI API", "NextJS", "TypeScript", "shadcn", "Supabase"],
       github: "https://github.com/Minsukim2827/Lingua-AI",
       website: null,
-      image: "/placeholder.svg?height=200&width=400"
+      image: "./linguaai.gif?height=200&width=400"
     }
   ]
