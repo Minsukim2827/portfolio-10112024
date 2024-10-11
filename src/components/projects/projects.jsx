@@ -13,7 +13,7 @@ export default function Projects() {
         <h1 className="text-4xl font-bold mb-8 text-center">My Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="flex flex-col bg-zinc-900 shadow-md hover:shadow-xl transition-shadow duration-300">
+            <Card key={index} className="flex flex-col bg-zinc-900 shadow-md hover:shadow-xl transition-shadow duration-300 border-none">
               <CardHeader>
                 <CardTitle className="text-red-500">{project.title}</CardTitle>
                 <CardDescription className="text-gray-300">{project.description}</CardDescription>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SocialIcon from './_components/socialIcons';
 import socialLinks from './_components/socialLinks';
 import AnimatedText from './_components/AnimatedText';
@@ -6,13 +6,24 @@ import Modal from './_components/Modal';
 
 export default function Intro() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 0);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
   return (
     <div
-      className="min-h-[calc(95vh-var(--navbar-height))] text-foreground flex flex-col md:flex-row items-center justify-center p-4 md:p-6 gap-6 md:gap-8"
+    className={`intro-container ${isLoaded ? 'intro-loaded' : 'intro-initial'} min-h-[calc(95vh-var(--navbar-height))] text-foreground flex flex-col md:flex-row items-center justify-center p-4 md:p-6 gap-6 md:gap-8`}
     >
       {/* Text Content */}
       <div className="md:w-1/2 space-y-5 text-center md:text-left mb-3 md:mb-0">

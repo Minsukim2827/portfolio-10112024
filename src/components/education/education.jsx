@@ -1,4 +1,3 @@
-
 import { Award, BookOpen, Code } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FadeInWrapper from "@/components/FadeInWrapper";
@@ -14,7 +13,7 @@ export default function Education() {
             Education
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-zinc-900 shadow-lg hover:shadow-2xl transition-shadow duration-300 education-card">
+            <Card className="bg-zinc-900 shadow-lg hover:shadow-2xl education-card red-glow border-none">
               <CardHeader>
                 <CardTitle className="flex items-center text-xl font-semibold text-white">
                   <BookOpen className="w-6 h-6 mr-2 text-red-500" />
@@ -32,7 +31,7 @@ export default function Education() {
               </CardContent>
             </Card>
 
-            <Card className="bg-zinc-900 shadow-lg hover:shadow-2xl transition-shadow duration-300 education-card">
+            <Card className="bg-zinc-900 shadow-lg hover:shadow-2xl education-card red-glow border-none">
               <CardHeader>
                 <CardTitle className="flex items-center text-xl font-semibold text-white">
                   <Code className="w-6 h-6 mr-2 text-red-500" />

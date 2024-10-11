@@ -4,6 +4,7 @@
   padding: 2rem;
   text-align: center;
   background-color: #0a0a0a;
+  --glow-color: rgba(255, 0, 0, 0.35);
 }
 
 
@@ -38,12 +39,14 @@
 }
 
 .education-card {
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
+
 .education-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 .project-image {
   position: relative;
@@ -56,3 +59,45 @@
   transform: scale(1.1);
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.intro-container {
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+
+.intro-initial {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.intro-loaded {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.red-glow {
+  background: linear-gradient(145deg, #18181b, #27272a);
+  box-shadow: 0 0 10px var(--glow-color),
+              0 0 20px var(--glow-color),
+              0 0 30px var(--glow-color),
+              0 0 40px var(--glow-color);
+  transition: all 0.3s ease;
+}
+
+.red-glow:hover {
+  box-shadow: 0 0 15px var(--glow-color),
+              0 0 30px var(--glow-color),
+              0 0 45px var(--glow-color),
+              0 0 60px var(--glow-color);
+}
